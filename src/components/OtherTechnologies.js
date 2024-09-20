@@ -7,6 +7,7 @@ const extraTechnologies = [
     { name: 'HTML', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
     { name: 'CSS', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
     { name: 'React', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+    { name: 'Node.js', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
     { name: 'Android', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg' },
     { name: 'iOS', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Apple_logo_grey.svg/505px-Apple_logo_grey.svg.png?20220821122206' },
   
@@ -19,6 +20,7 @@ const extraTechnologies = [
     { name: 'Oracle', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg' },
     { name: 'MongoDB', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
 
+    { name: 'jMeter',  url: 'https://jmeter.apache.org/images/jmeter_square.svg'},
     { name: 'JUnit', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
     { name: 'Postman', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg' },
   
@@ -34,20 +36,22 @@ const extraTechnologies = [
         <h3 className="text-xl font-semibold mb-4 text-center">
           Other technologies I've worked with, but weren't mentioned above
         </h3>
-        <motion.div
-          className="overflow-hidden py-4"
-          initial={{ x: '100%' }}
-          animate={{ x: '-100%' }}
-          transition={{
-            ease: 'linear',
-            duration: 20,
-            repeat: Infinity,
-            onRepeat: (animation) => {
-              animation.set({ x: '100%' }); 
-            },
-          }}
-        >
-          <div className="flex space-x-8">
+        {/* Wrapper with overflow-hidden and max-width */}
+        <div className="overflow-hidden w-full max-w-full mx-auto py-4">
+          <motion.div
+            className="flex space-x-8"
+            initial={{ x: '100%' }}
+            animate={{ x: '-100%' }}
+            transition={{
+              ease: 'linear',
+              duration: 20,
+              repeat: Infinity,
+              onRepeat: (animation) => {
+                animation.set({ x: '100%' });
+              },
+            }}
+          >
+            {/* Duplicate the technologies to create smooth infinite scrolling */}
             {extraTechnologies.map((tech, index) => (
               <Tippy key={index} content={tech.name}>
                 <img
@@ -57,11 +61,10 @@ const extraTechnologies = [
                 />
               </Tippy>
             ))}
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
     );
-  };
-  
+};
 
 export default OtherTechnologies;

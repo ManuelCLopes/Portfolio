@@ -32,7 +32,7 @@ const projects = [
     name: 'Real-time Monitoring Safety System',
     description: 'An Intelligent and Scalable IoT Monitoring Framework for Safety in Civil Construction workspaces and other sectors',
     github: 'https://link.springer.com/chapter/10.1007/978-3-031-14859-0_6',
-    technologies: ['python', 'kafka', 'rabbitmq', 'activemq', 'docker', 'jmeter'],
+    technologies: ['python', 'kafka', 'rabbitmq', 'activemq', 'docker'],
   },
   {
     name: 'Finance Tracker Mobile App',
@@ -63,7 +63,6 @@ const techLogos = {
   kotlin: { url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg', label: 'Kotlin' },
   rabbitmq: { url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rabbitmq/rabbitmq-original.svg', label: 'RabbitMQ' },
   activemq: { url: 'https://activemq.apache.org/assets/img/activemq_logo_icon.svg', label: 'ActiveMQ' }, 
-  jmeter: { url: 'https://jmeter.apache.org/images/jmeter_square.svg', label: 'jMeter' },
   kafka: { url: 'https://openwhisk.apache.org/images/icons/icon-kafka-white-trans.png', label: 'Kafka' },
   heroku: { url: 'https://www.svgrepo.com/show/331424/heroku.svg', label: 'Heroku' },
 };
