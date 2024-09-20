@@ -1,11 +1,11 @@
 {
   "name": "Manuel Lopes - Portfolio",
   "short_name": "Portfolio",
-  "description": "Solving problems, building cool stuff, and coding things that probably work. Here's journey through tech and innovation!",
+  "description": "Solving problems, building cool stuff, and coding things that probably work. Here's my journey through tech and innovation!",
   "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#1a202c", 
-  "theme_color": "#3182ce", 
+  "theme_color": "#1a202c", 
   "orientation": "portrait",
   "icons": [
     {
