@@ -2,22 +2,34 @@ import React from 'react';
 
 const experience = [
   {
+    company: 'Polytechnic Institute of Viseu',
+    role: 'Invited Assistant',
+    date: 'February 2023 - Present',
+    details: 'Programming and Algorithms, Software Engineering I, Database Management, and NoSQL courses.\nDeveloped course materials and provided academic support to students.',
+  },
+  {
     company: 'Bitsight',
     role: 'Software Engineer',
     date: 'July 2024 - August 2024',
-    details: 'Scaled SaaS products and optimized REST APIs.',
+    details: 'Contribute to scale SaaS product during a time of rapid user growth. Maintain, build, and optimize REST APIs with a particular focus on making existing APIs scale to handle large amounts of data.',
   },
   {
     company: 'Capgemini',
     role: 'Lead Software Engineer',
     date: 'July 2022 - June 2024',
-    details: 'Led development for automatic payment terminals.',
+    details: 'Design and develop applications using Outsystems platform.\nDevelopment of new functionalities for Automatic Payment Terminals Management Web App for the banking sector.\nMentor junior developers and review code to ensure best practices.',
   },
   {
     company: 'Softinsa',
     role: 'Software Developer',
     date: 'September 2020 - June 2022',
-    details: 'Developed web applications for banking and project management.',
+    details: 'Developed web applications using OutSystems for the banking sector.\nCreated and developed a Reactive Web app for Vaults Management.\nDeveloped new functionalities for a Traditional Web app responsible for Disinvestment Properties Management.',
+  },
+  {
+    company: 'Softinsa',
+    role: 'Trainee',
+    date: 'February 2020 - June 2020',
+    details: 'Developed a comprehensive mobile (online and offline) and web application for managing projects and the respective hours claimed by each company collaborator.',
   },
 ];
 
