@@ -39,8 +39,8 @@ const Experience = () => {
       <h2 className="text-3xl md:text-5xl font-bold mb-8 text-center">Experience</h2>
       <div className="relative">
         {/* Central line */}
-        <div className="hidden md:block absolute left-1/2 w-1 bg-blue-500 h-full"></div>
-        <div className="space-y-8 md:space-y-12 max-w-3xl mx-auto">
+        <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 bg-blue-500 h-full"></div>
+        <div className="space-y-8 md:space-y-12 max-w-6xl mx-auto">
           {experience.map((exp, idx) => (
             <div
               key={exp.company}
@@ -48,14 +48,21 @@ const Experience = () => {
                 idx % 2 === 0 ? 'md:justify-start' : 'md:justify-end'
               }`}
             >
-              <div className="md:w-1/2 w-full p-4 md:p-6 bg-gray-900 rounded-lg shadow-lg">
+              <div
+                className={`w-full md:w-auto max-w-[45%] p-4 md:p-6 bg-gray-900 rounded-lg shadow-lg ${
+                  idx % 2 === 0 ? 'md:mr-auto' : 'md:ml-auto'
+                }`}
+              >
                 <h3 className="text-xl md:text-2xl font-bold mb-1">{exp.role}</h3>
                 <p className="text-lg text-gray-400">{exp.company}</p>
                 <p className="text-sm text-gray-500">{exp.date}</p>
                 <p className="text-gray-400 whitespace-pre-line">{exp.details}</p>
               </div>
               {/* Blue dot for timeline */}
-              <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-8 w-8 bg-blue-500 rounded-full"></div>
+              <div
+                className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-8 w-8 bg-blue-500 rounded-full"
+                style={{ top: '50%', transform: 'translate(-50%, -50%)' }} // Adjust for perfect vertical centering
+              ></div>
             </div>
           ))}
         </div>
