@@ -54,11 +54,11 @@ const Experience = () => {
               }`}
             >
               <div
-                className={`w-full md:w-auto max-w-[45%] p-4 md:p-6 bg-gray-900 rounded-lg shadow-lg ${
+                className={`w-full md:w-auto max-w-full md:max-w-[45%] p-6 bg-gray-900 rounded-lg shadow-lg ${
                   idx % 2 === 0 ? 'md:mr-auto' : 'md:ml-auto'
                 }`}
               >
-                <h3 className="text-xl md:text-2xl font-bold mb-1">{exp.role}</h3>
+                <h3 className="text-lg md:text-2xl font-bold mb-2">{exp.role}</h3>
                 <a 
                   href={exp.website}
                   target='_blank'
@@ -66,7 +66,7 @@ const Experience = () => {
                   className="text-lg text-gray-400">
                     {exp.company}
                 </a>
-                <p className="text-sm text-gray-500">{exp.date}</p>
+                <p className="text-sm text-gray-500 mb-2">{exp.date}</p>
                 <p className="text-gray-400 whitespace-pre-line">{exp.details}</p>
               </div>
               {/* Blue dot for timeline */}

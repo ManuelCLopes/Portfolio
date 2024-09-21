@@ -56,10 +56,8 @@ const FloatingCertificationsButton = () => {
       }
     };
 
-    // Add event listener to detect clicks
     document.addEventListener('mousedown', handleClickOutside);
 
-    // Cleanup event listener on component unmount
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
@@ -68,7 +66,16 @@ const FloatingCertificationsButton = () => {
   // Animation variants for the FAB
   const fabVariants = {
     initial: { width: 60, height: 60, borderRadius: '50%', scale: 1 },
-    expanded: { width: 400, height: 500, borderRadius: '20px', scale: 1.1 },
+    expanded: {
+      width: '350px',
+      height: '500px',
+      borderRadius: '20px',
+      scale: 1.1,
+      '@media (max-width: 640px)': { // Apply on smaller screens
+        width: '80vw', // 90% of viewport width
+        height: '80vh', // 80% of viewport height
+      },
+    },
   };
 
   const containerVariants = {
@@ -124,7 +131,7 @@ const FloatingCertificationsButton = () => {
             <h3 className="text-white text-lg font-semibold mb-4">Certifications</h3>
 
             {/* Scrollable List */}
-            <div className="overflow-y-auto w-full h-full px-4" style={{ maxHeight: '450px' }}>
+            <div className="overflow-y-auto w-full h-full px-4" style={{ maxHeight: '70vh' }}>
               {certifications.map((cert, index) => (
                 <motion.div
                   key={index}
