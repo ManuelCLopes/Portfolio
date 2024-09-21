@@ -66,8 +66,11 @@ const Projects = () => {
     <div className="p-12 bg-gray-900 text-white">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {projects.map((project) => (
-          <motion.div
+          <motion.a
             key={project.name}
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             className="relative p-6 bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 border-2 border-transparent hover:border-blue-400"
           >
@@ -84,13 +87,7 @@ const Projects = () => {
                 </Tippy>
               ))}
             </div>
-            <a
-              href={project.github}
-              className="text-blue-400 hover:text-blue-600 transition-colors"
-            >
-              View on GitHub
-            </a>
-          </motion.div>
+          </motion.a>
         ))}
       </div>
     </div>

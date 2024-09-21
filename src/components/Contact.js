@@ -4,7 +4,7 @@ const Contact = () => {
   return (
     <div className="bg-gray-900 text-white py-12 px-6">
       <h2 className="text-4xl font-bold mb-6 text-center">
-        Glad you made it this far! Let's discuss some great ideas!
+        Glad you made it this far! Let's discuss some ideas!
       </h2>
       <p className="text-xl text-center text-gray-400 mb-12">
         Whether you want to chat about tech, ask questions, or brainstorm brilliant ideas, I'm just a message away.

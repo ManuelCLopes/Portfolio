@@ -3,25 +3,23 @@ import { motion } from 'framer-motion';
 
 const titles = ["Software Engineer", "Problem Solver", "Manuel Lopes"];
 
-const Home = () => {
+const Home = ({ scrollToProjects }) => {
   const [currentTitle, setCurrentTitle] = useState(0);
 
-  // Rotate the titles with a delay
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentTitle((prevTitle) => (prevTitle + 1) % titles.length);
-    }, 5000); // Change title every 5 seconds for smoother transitions
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
     <div className="relative min-h-screen bg-gradient-to-r from-gray-900 via-black to-gray-900 overflow-hidden">
-      {/* Background Animation */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 5, repeat: Infinity, repeatType: 'mirror' }} // Slow down the background
+        transition={{ delay: 1, duration: 5, repeat: Infinity, repeatType: 'mirror' }}
         className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 opacity-20"
       ></motion.div>
 
@@ -32,34 +30,31 @@ const Home = () => {
           transition={{ duration: 1.5 }}
           className="text-center"
         >
-          {/* Title Text with Smooth Transition */}
           <motion.h1
             key={currentTitle}
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
-            transition={{ duration: 1.5 }} // Smooth transition between titles
+            transition={{ duration: 1.5 }}
             className="text-7xl font-extrabold tracking-tight mb-4"
           >
             {titles[currentTitle]}
           </motion.h1>
           
-          {/* Subtitle */}
           <p className="text-xl font-light text-gray-400 max-w-md mx-auto mb-8">
             There are two things that I enjoy very much to do: innovate and solve problems. 
             By doing those things, I'm able to make people's lives easier somehow, and that's great!
           </p>
 
-          {/* Button */}
           <motion.button
             whileHover={{ scale: 1.05 }}
             className="mt-10 px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded-full text-lg font-medium"
+            onClick={scrollToProjects}
           >
-            Explore My Work
+            What I've been doing
           </motion.button>
         </motion.div>
 
-        {/* Scroll Indicator */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
