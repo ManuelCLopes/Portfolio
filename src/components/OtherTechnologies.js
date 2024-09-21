@@ -1,7 +1,8 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef, useEffect, useState } from 'react';
+import { motion, useAnimation } from 'framer-motion';
 import Tippy from '@tippyjs/react';
-import 'tippy.js/dist/tippy.css'; 
+import 'tippy.js/dist/tippy.css';
+
 
 const extraTechnologies = [
     { name: 'HTML', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
@@ -31,27 +32,63 @@ const extraTechnologies = [
   
 
   const OtherTechnologies = () => {
+    const containerRef = useRef(null);
+    const controls = useAnimation();
+    const [containerWidth, setContainerWidth] = useState(0);
+    const [viewWidth, setViewWidth] = useState(0);
+    const [scrollDuration, setScrollDuration] = useState(20); // Default scroll duration
+  
+    useEffect(() => {
+      const updateDimensions = () => {
+        if (containerRef.current) {
+          setContainerWidth(containerRef.current.scrollWidth); // Full width of the content
+          setViewWidth(containerRef.current.clientWidth); // Visible width (viewport)
+  
+          // Adjust scroll speed based on screen width
+          const screenWidth = window.innerWidth;
+          if (screenWidth < 768) {
+            setScrollDuration(10); // Faster speed on mobile (10 seconds)
+          } else {
+            setScrollDuration(20); // Slower speed on larger screens (20 seconds)
+          }
+        }
+      };
+  
+      // Update dimensions on load and resize
+      updateDimensions();
+      window.addEventListener('resize', updateDimensions);
+  
+      return () => window.removeEventListener('resize', updateDimensions);
+    }, []);
+  
+    useEffect(() => {
+      const startScrolling = async () => {
+        if (containerWidth && viewWidth) {
+          await controls.start({
+            x: [viewWidth, -containerWidth], // Starts from the right (viewport width) and moves left
+            transition: {
+              ease: 'linear',
+              duration: scrollDuration, // Adjust duration based on the screen size
+              repeat: Infinity,
+              onRepeat: () => controls.set({ x: viewWidth }), // Reset to the right side when the scroll ends
+            },
+          });
+        }
+      };
+      startScrolling();
+    }, [containerWidth, viewWidth, controls, scrollDuration]);
+  
     return (
       <div className="bg-gray-900 text-white">
         <h3 className="text-xl font-semibold mb-4 text-center">
-          other technologies I've worked with, but weren't mentioned above
+          Other technologies I've worked with, but weren't mentioned above
         </h3>
-        {/* Wrapper with overflow-hidden and max-width */}
-        <div className="overflow-hidden w-full max-w-full mx-auto py-4">
+        <div className="overflow-hidden w-full max-w-full mx-auto py-4" ref={containerRef}>
           <motion.div
             className="flex space-x-8"
-            initial={{ x: '100%' }}
-            animate={{ x: '-100%' }}
-            transition={{
-              ease: 'linear',
-              duration: 20,
-              repeat: Infinity,
-              onRepeat: (animation) => {
-                animation.set({ x: '100%' });
-              },
-            }}
+            animate={controls}
+            initial={{ x: viewWidth }} // Ensure it starts at the right (visible edge)
           >
-            {/* Duplicate the technologies to create smooth infinite scrolling */}
             {extraTechnologies.map((tech, index) => (
               <Tippy key={index} content={tech.name}>
                 <img
@@ -65,6 +102,6 @@ const extraTechnologies = [
         </div>
       </div>
     );
-};
-
-export default OtherTechnologies;
+  };
+  
+  export default OtherTechnologies;
