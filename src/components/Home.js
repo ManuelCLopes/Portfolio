@@ -62,7 +62,7 @@ const Home = ({ scrollToProjects }) => {
           className="absolute bottom-12 left-1/2 transform -translate-x-1/2 flex flex-col items-center"
         >
           <div className="text-gray-400">Scroll Down</div>
-          <div className="h-6 w-6 border-2 border-gray-400 rounded-full animate-bounce"></div>
+          <div className="mt-1 h-6 w-6 border-2 border-gray-400 rounded-full animate-bounce"></div>
         </motion.div>
       </div>
     </div>
