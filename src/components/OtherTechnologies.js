@@ -34,7 +34,7 @@ const extraTechnologies = [
     return (
       <div className="bg-gray-900 text-white">
         <h3 className="text-xl font-semibold mb-4 text-center">
-          Other technologies I've worked with, but weren't mentioned above
+          other technologies I've worked with, but weren't mentioned above
         </h3>
         {/* Wrapper with overflow-hidden and max-width */}
         <div className="overflow-hidden w-full max-w-full mx-auto py-4">

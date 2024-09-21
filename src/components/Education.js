@@ -2,35 +2,30 @@ import React from 'react';
 
 const education = [
   {
-    institution: 'Instituto Politécnico de Viseu',
-    degree: 'Master of Computer Science and Engineering (17/20)',
+    institution: 'Polytechnic Institute of Viseu',
+    degree: 'MSc in Computer Science and Engineering - Information Systems',
     date: 'October 2021 - April 2024',
-    details: 'Focus: Information Systems, research in real-time monitoring and IoT frameworks.',
+    details: 'Focus on Information Systems, research in real-time monitoring and IoT frameworks.',
   },
   {
-    institution: 'Instituto Politécnico de Viseu',
-    degree: 'Bachelor of Computer Science and Engineering (14/20)',
+    institution: 'Polytechnic Institute of Viseu',
+    degree: 'BSc in Computer Science and Engineering',
     date: 'September 2017 - July 2020',
-    details: 'Focus on software engineering and distributed systems.',
+    details: 'Focus on software engineering, distributed systems and databases management.',
   },
 ];
 
-const Education = () => {
-  return (
-    <div className="p-12 bg-gray-800 text-white">
-      <h2 className="text-5xl font-bold mb-8 text-center">Education</h2>
-      <div className="max-w-3xl mx-auto space-y-8">
-        {education.map((edu) => (
-          <div key={edu.institution} className="border-b border-gray-700 pb-4">
-            <h3 className="text-2xl font-semibold">{edu.degree}</h3>
-            <p className="text-xl text-gray-400">{edu.institution}</p>
-            <p className="text-sm text-gray-500">{edu.date}</p>
-            <p className="text-gray-400">{edu.details}</p>
-          </div>
-        ))}
+const Education = () => (
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-12 bg-gray-800">
+    {education.map((edu, index) => (
+      <div key={index} className="bg-gray-900 p-6 rounded-lg shadow-lg">
+        <h3 className="text-2xl font-bold text-white">{edu.degree}</h3>
+        <p className="text-gray-400">{edu.institution}</p>
+        <p className="text-sm text-gray-500">{edu.date}</p>
+        <p className="text-gray-300">{edu.details}</p>
       </div>
-    </div>
-  );
-};
+    ))}
+  </div>
+);
 
 export default Education;

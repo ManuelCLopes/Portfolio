@@ -7,6 +7,7 @@ import Experience from './components/Experience';
 import Contact from './components/Contact';
 import OtherTechnologies from './components/OtherTechnologies';
 import FloatingCertificationsButton from './components/FloatingCertificationsButton';
+import Academy from './components/Academy';
 
 function App() {
   return (
@@ -15,8 +16,7 @@ function App() {
       <Projects />
       <OtherTechnologies />
       <FloatingCertificationsButton />
-      <Publications />
-      <Education />
+      <Academy />
       <Experience />
       <Contact />
     </div>

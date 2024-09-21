@@ -5,12 +5,6 @@ import 'tippy.js/dist/tippy.css'; // Tooltip styles
 
 const projects = [
   {
-    name: 'Hipermarket Simulator',
-    description: 'C++ application that simulates an hipermarket.',
-    github: 'https://github.com/ManuelCLopes/HipermarketSimulator',
-    technologies: ['cplusplus'],
-  },
-  {
     name: 'GraphPathsCalculator',
     description: 'This C++ application was implemented in order to explore the capabilities of graphs.',
     github: 'https://github.com/ManuelCLopes/GraphPathsCalculator',
@@ -70,7 +64,6 @@ const techLogos = {
 const Projects = () => {
   return (
     <div className="p-12 bg-gray-900 text-white">
-      <h2 className="text-5xl font-bold mb-8 text-center">Projects</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {projects.map((project) => (
           <motion.div

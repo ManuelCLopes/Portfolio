@@ -36,7 +36,7 @@ const experience = [
 const Experience = () => {
   return (
     <div className="p-6 md:p-12 bg-gray-800 text-white">
-      <h2 className="text-3xl md:text-5xl font-bold mb-8 text-center">Experience</h2>
+      <h2 className="text-3xl md:text-5xl font-bold mb-8 text-center">Tech roles that shaped my journey</h2>
       <div className="relative">
         {/* Central line */}
         <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 bg-blue-500 h-full"></div>
