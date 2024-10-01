@@ -42,7 +42,7 @@ const Contact = () => {
         Glad you made it this far! Let's discuss some ideas!
       </h2>
       <p className="text-xl text-center text-gray-400 mb-12">
-        Whether you want to chat about tech, ask questions, or brainstorm brilliant ideas, I'm just a message away.
+        Whether you want to chat about tech, ask questions, or brainstorm brilliant ideas, I'm just a message away
       </p>
 
       <form className="max-w-lg mx-auto space-y-6" onSubmit={handleSubmit}>
@@ -103,6 +103,35 @@ const Contact = () => {
           </div>
         )}
       </form>
+
+      {/* GitHub and LinkedIn buttons */}
+      <div className="flex justify-center space-x-6 mt-8">
+        <a
+          href="https://github.com/manuelclopes"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg"
+            alt="GitHub"
+            className="w-8 h-8 text-gray-400 hover:text-white transition-colors"
+            style={{ filter: "invert(100%)" }}
+          />
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/manuelclopes"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg"
+            alt="LinkedIn"
+            className="w-8 h-8 text-gray-400 hover:text-white transition-colors"
+            style={{ filter: "invert(100%)" }}
+          />
+        </a>
+      </div>
 
       <p className="text-center text-gray-500 mt-8">
         Don’t be shy, I’d love to hear from you!
