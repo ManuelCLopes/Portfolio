@@ -2,7 +2,7 @@ import React from "react";
 
 const experience = [
   {
-    company: "Taslkdesk",
+    company: "Talkdesk",
     website: "https://www.talkdesk.com",
     role: "Software Engineer",
     date: "December 2024 - Present",
